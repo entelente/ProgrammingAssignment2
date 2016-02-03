@@ -2,7 +2,14 @@
 ## The code computes and stores the inverse of a matrix to avoid unnecessary recalculations.
 ## The cached value is refreshed on matrix change.
 
-## Returns a matrix object that caches its inverse.
+## Returns a list of functions for the provided matrix:
+## set : sets a new matrix
+## get : gets the matrix
+## setInverse : sets the inverse matrix
+## getInverse : gets the inverse matrix
+##    (Note: it can be NULL as this matrix container doesn't do any calculations,
+##     please use function cacheSolve to populate the inverse)
+
 makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
   set <- function(newMatrix) {
